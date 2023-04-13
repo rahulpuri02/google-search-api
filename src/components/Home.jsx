@@ -2,6 +2,7 @@ import React from 'react'
 import HomeHeader from './HomeHeader';
 import Logo from '../assets/google-logo.png'
 import SearchInput from './SearchInput';
+import Footer from './Footer';
 const Home = () => {
   return (
     <div className='h-[100vh] flex flex-col'>
@@ -21,6 +22,7 @@ const Home = () => {
             </div>
        
         </main>
+        <Footer />
     </div>
   )
 }
