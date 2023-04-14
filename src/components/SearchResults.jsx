@@ -6,6 +6,7 @@ import { Context } from '../utils/ContextApi';
 import { fetchDataFromApi } from '../utils/api';
 import SearchResultTemplate from './SearchResultTemplate';
 import SearchImageTemplate from './SearchImageTemplate';
+import Pagination from './Pagination';
 
 
 
@@ -52,11 +53,12 @@ const SearchResults = () => {
     </>) : (
       <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6'>
       {items.map((item, i) => {
-        return   <SearchImageTemplate key={i} Searchdata={item} />
+        return   <SearchImageTemplate key={i} data={item} />
         })
       }
       </div>
     )}
+    <Pagination queries={queries} />
   </main>
   <Footer />
  </div>

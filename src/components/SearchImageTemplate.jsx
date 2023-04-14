@@ -1,12 +1,12 @@
 import React from 'react'
 
-const SearchImageTemplate = () => {
+const SearchImageTemplate = ({data}) => {
   return (
     <div
     className="group flex flex-col py-3 cursor-pointer"
     onClick={() => window.open(data.image.contextLink, "_blank")}
 >
-    <div className="rounded-xl overflow-hidden bg-black/[0.03] h-[100px] md:h-[120px] lg:h-[140px] group-hover:shadow-c">
+    <div className="rounded-xl overflow-hidden bg-black/[0.03] h-[100px] md:h-[120px] lg:h-[140px] group-hover:shadow-c m-3">
         <img
             className="h-full w-full object-contain"
             src={data.link}
