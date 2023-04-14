@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SearchResultHeader from './SearchResultHeader'
 import Footer from './Footer'
+import { useParams } from 'react-router-dom';
+import { Context } from '../utils/ContextApi';
+import { fetchDataFromApi } from '../utils/api';
+
+
+
 
 const SearchResults = () => {
-  return (
+
+    const [result, setResult] = useState();
+    const {query, startIndex} = useParams();
+    const {imageSearch} = useContext(Context);
+
+    useEffect(() => {
+      fetchSearchResults();
+    }, [query, startIndex, imageSearch])
+    
+    const fetchSearchResults = () => {
+        let payload = {q: query, start: startIndex}
+        if(imageSearch) {
+            payload.searchType = 'image'
+        }
+        fetchDataFromApi(payload).then((res) => {
+            console.log(res)
+            setResult(res);
+        })
+    }
+    
+   return (
  <div className='flex flex-col min-h-[100vh]'>
   <SearchResultHeader />
   <main className='grow p-[12px] pb-0 md:pr-5 md:pl-20 '>

@@ -6,10 +6,10 @@ import { IoMdClose } from "react-icons/io";
 import { useNavigate, useParams } from 'react-router-dom';
 
 const SearchInput = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const { query } = useParams();
+  const [searchQuery, setSearchQuery] = useState( query || "");
   
   const navigate = useNavigate();
-  const {query} = useParams();
 
  
   const searchQueryHandler = (event) => {
