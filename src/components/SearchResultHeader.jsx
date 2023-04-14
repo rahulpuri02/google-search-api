@@ -14,7 +14,9 @@ const SearchResultsHeader = () => {
     const [selectedMenu, setSelectedMenu] = useState("All");
    const {setImageSearch} = useContext(Context);
 
-  
+   useEffect(() => {
+    return () => setImageSearch(false);
+}, []);
   
 
     const clickHandler = (menu) => {

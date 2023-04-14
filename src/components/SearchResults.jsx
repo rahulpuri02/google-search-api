@@ -20,6 +20,7 @@ const SearchResults = () => {
     fetchSearchResult();
    }, [query, startIndex, imageSearch])
 
+
     const fetchSearchResult = () => {
         let payload = {q: query, start: startIndex}
         if(imageSearch) {
