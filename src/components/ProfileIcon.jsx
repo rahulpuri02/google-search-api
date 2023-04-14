@@ -1,7 +1,7 @@
 import React from 'react'
 import { TbGridDots } from 'react-icons/tb';
 import ProfileRing from '../assets/profile-ring.svg';
-import Moosa from '../assets/sidhu.jpg';
+import ProfilePic from '../assets/profile-pic.png';
 
 const ProfileIcon = () => {
   return (
@@ -12,7 +12,7 @@ const ProfileIcon = () => {
     <span className="h-10 w-10 relative flex justify-center items-center">
         <img className="absolute" src={ProfileRing} alt='google-ring' />
         <span className="h-8 w-8 rounded-full overflow-hidden">
-            <img className="h-full w-full" src={Moosa}  alt='moosa'/>
+            <img className="h-full w-full" src={ProfilePic}  alt='google-profile'/>
         </span>
     </span>
 </div>
